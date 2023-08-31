@@ -1,0 +1,126 @@
+/* Custom Properties
+--------------------- */
+:root {
+   --bg-clr: #020659;
+   --hdr-grad: linear-gradient(to right, #210fd9, black);
+   --font-clr: #fff;
+   --main-bg-clr: #fff;
+   --nav-link-clr: #fff;
+   --nav-link-clr__hover: #590242;
+   --pl-bg-clr: #2699fb;
+   --pl-card-clr: #0d8dfb;
+   --cur_nav-bg-clr: #030a8c;
+   --cur-card-clr: #020873;
+   --accent-clr: #590242;
+   --accent-font-clr: #590242;
+
+   --ff: Verdana, Geneva, Tahoma, sans-serif;
+   --fs-h1: 1.5rem;
+   --fs-h2_h3: 1rem;
+   --fs-ftr-p: 0.75rem;
+}
+
+/* Globals
+--------------------- */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html {
+   background-color: var(--bg-clr);
+   font-size: 16px;
+}
+
+body {
+   font-family: var(--ff);
+   color: var(--font-clr);
+   max-width: 80%;
+   margin: 0 auto;
+}
+
+/* Header
+--------------------- */
+header {
+   background-image: var(--hdr-grad);
+   display: flex;
+   flex-direction: column-reverse;
+}
+
+h1 {
+   display: none;
+}
+
+h2 {
+   color: var(--accent-font-clr);
+}
+
+h2, h3 {
+   font-size: var(--fs-h2_h3);
+   font-weight: bold;
+}
+
+/* Menu
+--------------------- */
+
+
+nav {
+   background-color: var(--cur_nav-bg-clr);
+   position: relative;
+}
+
+ul > li:first-of-type {
+   font-variant: small-caps;
+   font-size: var(--fs-h1);
+}
+
+ul > li:not(:first-of-type) {
+   text-transform: uppercase;
+}
+
+nav a:link,
+nav a:active,
+nav a:visited {
+   text-decoration: none;
+   color: var(--nav-link-clr);
+}
+
+nav a:hover {
+   color: var(--nav-link-clr__hover);
+}
+
+/* Main Content
+--------------------- */
+main {
+   background-color: var(--main-bg-clr);
+}
+
+#trending {
+   color: var(--accent-font-clr);
+}
+
+#playlists .wrap {
+   background-color: var(--pl-bg-clr);
+   padding: 0.1rem;
+}
+
+#playlists section {
+   background-color: var(--pl-card-clr);
+   margin: 0.5rem;
+   padding: 0.5rem;
+}
+
+#curated .wrap {
+   background-color: var(--cur_nav-bg-clr);
+   padding: 0.1rem;
+}
+
+#curated section {
+   background-color: var(--cur-card-clr);
+   margin: 0.5rem;
+   padding: 0.5rem;
+}
+
+/* Footer
+--------------------- */
