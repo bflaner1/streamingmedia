@@ -14,76 +14,88 @@
          <h2>Smooth Jazz</h2>
          <p>This station is dedicated to the soothing sounds of smooth jazz. This genre of commercially oriented crossover jazz became dominant in the 1980s and early 1990s.</p>
       </div>
-      <nav>
-         <!-- <input class="menu-btn" type="checkbox" id="menu-btn">
-         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label> -->
-         <ul class="menu">
-            <li><a href="#top">MuzakMaker</a></li>
-            <li><a href="#trending">Trending Songs</a></li>
-            <li><a href="#playlists">Your playlists</a></li>
-            <li><a href="#curated">Curated Playlists</a></li>
-            <li><a href="#"><img src="images/duke-silver.png" alt=""></a></li>
-         </ul>
-      </nav>
    </header>
+   <nav>
+      <!-- <input class="menu-btn" type="checkbox" id="menu-btn">
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label> -->
+      <ul class="menu">
+         <li><a href="#top">MuzakMaker</a></li>
+         <li><a href="#trending">Trending Songs</a></li>
+         <li><a href="#playlists">Your playlists</a></li>
+         <li><a href="#curated">Curated Playlists</a></li>
+         <li><a href="#"><img src="images/duke-silver.png" alt=""></a></li>
+      </ul>
+   </nav>
    <main>
       <article id="trending">
          <h2>Trending Songs</h2>
-         <section>
-            <h3>Aloma</h3>
-            <p>Artist Cali</p>
-            <img src="images/aloma-cover.png" alt="Aloma cover">
-            <figure>
-               <audio controls src="audio/aloma.mp3">
-                  <a href="audio/aloma.mp3">Download audio</a>
-               </audio>
-            </figure>
-         </section>
-         <section>
-            <h3>My Road</h3>
-            <p>Artist Nesterouk</p>
-            <img src="images/my-road-cover.png" alt="My Road cover">
-            <figure>
-               <audio controls src="audio/my-road.mp3">
-                  <a href="audio/my-road.mp3">Download audio</a>
-               </audio>
-            </figure>
-         </section>
-         <section>
-            <h3>Papaya</h3>
-            <p>Artist Dredstudio</p>
-            <img src="images/papaya-cover.png" alt="Papaya cover">
-            <figure>
-               <audio controls src="audio/papaya.mp3">
-                  <a href="audio/papaya.mp3">Download audio</a>
-               </audio>
-            </figure>
-         </section>
-         <section>
-            <h3>Smoothies</h3>
-            <p>Artist Black Rhomb</p>
-            <img src="images/smoothies-cover.png" alt="Smoothies cover">
-            <figure>
-               <audio controls src="audio/smoothies.mp3">
-                  <a href="audio/smoothies.mp3">Download audio</a>
-               </audio>
-            </figure>
-         </section>
-         <section>
-            <h3>Successful Performance</h3>
-            Artist Ricky Bombino
-            <img src="images/successful-performance-cover.png" alt="Successful Performance cover">
-            <figure>
-               <audio controls src="audio/successful-performance.mp3">
-                  <a href="audio/successful-performance.mp3">Download audio</a>
-               </audio>
-            </figure>
-         </section>
-         More trending
+         <div class="tr-content">
+            <section>
+               <div class="song-artist">
+                  <h3>Aloma</h3>
+                  <p><span>Artist</span> Cali</p>
+               </div>
+               <img src="images/aloma-cover.png" alt="Aloma cover">
+               <figure>
+                  <audio controls src="audio/aloma.mp3">
+                     <a href="audio/aloma.mp3">Download audio</a>
+                  </audio>
+               </figure>
+            </section>
+            <section>
+               <div class="song-artist">
+                  <h3>My Road</h3>
+                  <p><span>Artist</span> Nesterouk</p>
+               </div>
+               <img src="images/my-road-cover.png" alt="My Road cover">
+               <figure>
+                  <audio controls src="audio/my-road.mp3">
+                     <a href="audio/my-road.mp3">Download audio</a>
+                  </audio>
+               </figure>
+            </section>
+            <section>
+               <div class="song-artist">
+                  <h3>Papaya</h3>
+                  <p><span>Artist</span> Dredstudio</p>
+               </div>
+               <img src="images/papaya-cover.png" alt="Papaya cover">
+               <figure>
+                  <audio controls src="audio/papaya.mp3">
+                     <a href="audio/papaya.mp3">Download audio</a>
+                  </audio>
+               </figure>
+            </section>
+            <section>
+               <div class="song-artist">
+                  <h3>Smoothies</h3>
+                  <p><span>Artist</span> Black Rhomb</p>
+               </div>
+               <img src="images/smoothies-cover.png" alt="Smoothies cover">
+               <figure>
+                  <audio controls src="audio/smoothies.mp3">
+                     <a href="audio/smoothies.mp3">Download audio</a>
+                  </audio>
+               </figure>
+            </section>
+            <section>
+               <div class="song-artist">
+                  <h3>Successful Performance</h3>
+                  <p><span>Artist</span> Ricky Bombino</p>
+               </div>
+               <img src="images/successful-performance-cover.png" alt="Successful Performance cover">
+               <figure>
+                  <audio controls src="audio/successful-performance.mp3">
+                     <a href="audio/successful-performance.mp3">Download audio</a>
+                  </audio>
+               </figure>
+            </section>
+         </div>
+         <button class="more-btn">More trending</button>
       </article>
       <article id="playlists">
          <h2>Your Playlists</h2>
-         <div class="wrap">
+         <div class="pl-content wrap">
             <section>
                <img src="images/best-of-2020-cover.png" alt="Best of 2020 cover">
                <h3>Best of 2020</h3>
@@ -110,11 +122,11 @@
                <p>Background music to keep you going while you study.</p>
             </section>
          </div>
-         All your playlists
+         <button class="more-btn">All your playlists</button>
       </article>
       <article id="curated">
          <h2>Curated Playlists</h2>
-         <div class="wrap">
+         <div class="cur-content wrap">
             <section>
                <img src="images/boozy-brunch-cover.png" alt="Boozy Brunch cover">
                <h3>Boozy Brunch</h3>
@@ -141,7 +153,7 @@
                <p>The greatest collection of your sax favorites.</p>
             </section>
          </div>
-         More curated
+         <button class="more-btn">More curated</button>
       </article>
    </main>
    <footer>

@@ -17,6 +17,7 @@
    --ff: Verdana, Geneva, Tahoma, sans-serif;
    --fs-h1: 1.5rem;
    --fs-h2_h3: 1rem;
+   --fs-p: 0.8rem;
    --fs-ftr-p: 0.75rem;
 }
 
@@ -34,40 +35,50 @@ html {
 }
 
 body {
+   background-color: var(--main-bg-clr);
    font-family: var(--ff);
    color: var(--font-clr);
-   max-width: 80%;
+   max-width: 375px;
    margin: 0 auto;
+   position: relative;
 }
 
 /* Header
 --------------------- */
 header {
    background-image: var(--hdr-grad);
-   display: flex;
-   flex-direction: column-reverse;
+   padding: 7.25rem 1.5rem 1rem;
 }
 
 h1 {
+   font-size: var(--fs-h1);
    display: none;
+}
+
+header h2 {
+   color: var(--font-clr);
+   padding-bottom: 1rem;
+   margin-left: 0;
 }
 
 h2 {
    color: var(--accent-font-clr);
+   margin-left: 1.5rem;
 }
 
 h2, h3 {
    font-size: var(--fs-h2_h3);
    font-weight: bold;
+   text-transform: uppercase;
 }
 
 /* Menu
 --------------------- */
-
-
 nav {
    background-color: var(--cur_nav-bg-clr);
-   position: relative;
+   position: absolute;
+   width: 100%;
+   top: 0;
 }
 
 ul > li:first-of-type {
@@ -96,27 +107,99 @@ main {
    background-color: var(--main-bg-clr);
 }
 
+article {
+   width: 100%;
+   margin: 2rem 0;
+}
+
+.wrap {
+   padding: 0.1rem;
+   width: 100%;
+   display: flex;
+   overflow-x: scroll;
+}
+
+.more-btn {
+   background-color: var(--accent-clr);
+   color: var(--font-clr);
+   padding: 0.4rem 1.25rem;
+   margin-left: 1.5rem;
+   margin-top: 0.5rem;
+}
+
+/* Trending
+--------------------- */
 #trending {
    color: var(--accent-font-clr);
 }
 
-#playlists .wrap {
-   background-color: var(--pl-bg-clr);
-   padding: 0.1rem;
+.tr-content {
+   width: 100%;
+   display: flex;
+   overflow-x: scroll;
+   margin-top: 0.5rem;
 }
 
-#playlists section {
+.tr-content section {
+   margin: 0.6rem;
+   height: 300px;
+   display: grid;
+   grid-template-rows: repeat(5, 1fr);
+}
+
+.tr-content section img {
+   height: 100%;
+   grid-row: 1 / -1;
+   grid-column: 1 / -1;
+   z-index: 0;
+}
+
+.tr-content section .song-artist {
+   grid-row: 5 / 6;
+   grid-column: 1 / 2;
+   z-index: 1;
+   background-color: rgba(255, 255, 255, 0.7);
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
+   align-items: center;
+   padding-left: 1rem;
+}
+
+.tr-content section figure {
+   grid-row: 3 / 4;
+   grid-column: 1 / 2;
+   z-index: 2;
+}
+
+.song-artist {
+   font-size: var(--fs-p);
+}
+
+.song-artist span {
+   font-style: italic;
+}
+
+/* Your Playlists
+--------------------- */
+.pl-content {
+   background-color: var(--pl-bg-clr);
+   margin-top: 0.5rem;
+}
+
+.pl-content section {
    background-color: var(--pl-card-clr);
    margin: 0.5rem;
    padding: 0.5rem;
 }
 
-#curated .wrap {
+/* Curated Playlists
+--------------------- */
+.cur-content {
    background-color: var(--cur_nav-bg-clr);
-   padding: 0.1rem;
+   margin-top: 0.5rem;
 }
 
-#curated section {
+.cur-content section {
    background-color: var(--cur-card-clr);
    margin: 0.5rem;
    padding: 0.5rem;
@@ -124,3 +207,12 @@ main {
 
 /* Footer
 --------------------- */
+footer {
+   text-align: center;
+   padding: 0 0 1rem;
+}
+
+footer p {
+   font-size: var(--fs-ftr-p);
+   color: var(--accent-font-clr);
+}
