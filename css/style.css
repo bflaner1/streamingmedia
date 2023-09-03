@@ -47,11 +47,19 @@ body {
    position: relative;
 }
 
+p {
+   font-size: var(--fs-p);
+}
+
 /* Header
 --------------------- */
 header {
    background-image: var(--hdr-grad);
-   padding: 4.25rem 1.5rem 1rem;
+   padding: 4.25rem 2rem 1rem;
+}
+
+header p {
+   line-height: 1.5;
 }
 
 h1 {
@@ -67,7 +75,8 @@ header h2 {
 
 h2 {
    color: var(--accent-font-clr);
-   margin-left: 1.5rem;
+   padding-bottom: 1rem;
+   margin-left: 2rem;
 }
 
 h2, h3 {
@@ -204,7 +213,7 @@ article {
    background-color: var(--accent-clr);
    color: var(--font-clr);
    padding: 0.4rem 1.25rem;
-   margin-left: 1.5rem;
+   margin-left: 2rem;
    margin-top: 0.5rem;
 }
 
@@ -217,10 +226,12 @@ article {
 .tr-content {
    width: 100%;
    display: flex;
+   /* gap: 1rem; */
    overflow-x: scroll;
    scrollbar-color: var(--scrollbar-bg-clr__trending) rgb(212,190,206);
    scrollbar-width: thin;
-   margin-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   padding-top: 0.5rem;
 }
 
 .tr-content::-webkit-scrollbar {
@@ -242,10 +253,15 @@ article {
 }
 
 .tr-content section {
-   margin-left: 0.6rem;
+   /* margin-left: 0.3rem; */
+   margin-right: 1rem;
    height: 300px;
    display: grid;
    grid-template-rows: repeat(5, 1fr);
+}
+
+.tr-content section:first-of-type {
+   margin-left: 0.8rem;
 }
 
 .tr-content section img {
@@ -291,6 +307,7 @@ article {
    background-color: var(--pl-card-clr);
    margin: 0.5rem;
    padding: 0.5rem;
+   text-align: center;
 }
 
 /* Curated Playlists
@@ -304,6 +321,7 @@ article {
    background-color: var(--cur-card-clr);
    margin: 0.5rem;
    padding: 0.5rem;
+   text-align: center;
 }
 
 /* Playlist Scrollbars
