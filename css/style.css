@@ -19,6 +19,10 @@
    --fs-h2_h3: 1rem;
    --fs-p: 0.8rem;
    --fs-ftr-p: 0.75rem;
+
+   --scrollbar-width: 15px;
+   --scrollbar-bg-clr__trending: #590242;
+   --scrollbar-thumb__trending: #590242;
 }
 
 /* Globals
@@ -47,7 +51,7 @@ body {
 --------------------- */
 header {
    background-image: var(--hdr-grad);
-   padding: 7.25rem 1.5rem 1rem;
+   padding: 4.25rem 1.5rem 1rem;
 }
 
 h1 {
@@ -79,14 +83,91 @@ nav {
    position: absolute;
    width: 100%;
    top: 0;
+   display: grid;
+   grid-template-columns: 1fr 6fr;
+   grid-template-rows: 1fr;
 }
 
-ul > li:first-of-type {
+ul {
+   overflow: hidden;
+   max-height: 2rem;
+   transition: max-height 0.2s ease-out;
+   padding-left: 2.5rem;
+   margin-top: 1rem;
+}
+
+label {
+   cursor: pointer;
+   display: inline-block;
+   padding: 28px 20px;
+   position: relative;
+   user-select: none;
+   align-self: start;
+}
+
+label span {
+   background-color: #fff;
+   display: block;
+   height: 2px;
+   position: relative;
+   transition: background-color 0.2s ease-out;
+   width: 18px;
+}
+
+label span:before, label span:after {
+   background-color: #fff;
+   content: '';
+   display: block;
+   height: 100%;
+   position: absolute;
+   transition: all 0.2s ease-out;
+   width: 100%;
+}
+
+label span:before {
+   top: 5px;
+}
+
+label span:after {
+   top: -5px;
+}
+
+input {
+   display: none;
+}
+
+input:checked ~ ul {
+   max-height: 500px;
+}
+
+input:checked ~ label span {
+   background: transparent;
+}
+
+input:checked ~ label span:before {
+   transform: rotate(-45deg);
+}
+
+input:checked ~ label span::after {
+   transform: rotate(45deg);
+}
+
+input:checked ~ label:not(.steps) span:before,
+input:checked ~ label:not(.steps) span:after {
+   top: 0;
+}
+
+nav li {
+   padding: 0.5rem;
+}
+
+nav li:first-of-type {
    font-variant: small-caps;
    font-size: var(--fs-h1);
+   padding-top: 0;
 }
 
-ul > li:not(:first-of-type) {
+nav li:not(:first-of-type) {
    text-transform: uppercase;
 }
 
@@ -137,11 +218,31 @@ article {
    width: 100%;
    display: flex;
    overflow-x: scroll;
+   scrollbar-color: var(--scrollbar-bg-clr__trending) rgb(212,190,206);
+   scrollbar-width: thin;
    margin-top: 0.5rem;
 }
 
+.tr-content::-webkit-scrollbar {
+   width: var(--scrollbar-width);
+   border-radius: 5px;
+}
+
+.tr-content::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 15px var(--scrollbar-bg-clr__trending);
+}
+
+.tr-content::-webkit-scrollbar-thumb {
+   background-color: var(--scrollbar-thumb__trending);
+   border-radius: 5px;
+}
+
+.tr-content::-webkit-scrollbar-thumb:hover {
+   background: #020659;
+}
+
 .tr-content section {
-   margin: 0.6rem;
+   margin-left: 0.6rem;
    height: 300px;
    display: grid;
    grid-template-rows: repeat(5, 1fr);
@@ -203,6 +304,39 @@ article {
    background-color: var(--cur-card-clr);
    margin: 0.5rem;
    padding: 0.5rem;
+}
+
+/* Playlist Scrollbars
+--------------------- */
+.pl-content {
+   scrollbar-color: #020659 rgb(29,115,209);
+   scrollbar-width: thin;
+}
+
+.cur-content {
+   scrollbar-color: #020659 rgb(3, 13, 204);
+   scrollbar-width: thin;
+}
+
+.pl-content::-webkit-scrollbar,
+.cur-content::-webkit-scrollbar {
+   width: var(--scrollbar-width);
+}
+
+.pl-content::-webkit-scrollbar-track,
+.cur-content::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 15px #020659;
+}
+
+.pl-content::-webkit-scrollbar-thumb,
+.cur-content::-webkit-scrollbar-thumb {
+   background: #020659;
+   border-radius: 5px;
+}
+
+.pl-content::-webkit-scrollbar-thumb:hover,
+.cur-content::-webkit-scrollbar-thumb:hover {
+   background: #fff;
 }
 
 /* Footer
