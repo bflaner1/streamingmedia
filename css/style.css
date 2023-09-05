@@ -75,7 +75,7 @@ header h2 {
 
 h2 {
    color: var(--accent-font-clr);
-   padding-bottom: 1rem;
+   padding-bottom: 0.5rem;
    margin-left: 2rem;
 }
 
@@ -294,6 +294,23 @@ article {
 
 .song-artist span {
    font-style: italic;
+}
+
+audio::-webkit-media-controls-enclosure {
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-play-button {
+   background-color: #fff;
+   border-radius: 50%;
+}
+
+audio::-webkit-media-controls-volume-slider {
+   background-color: rgba(255, 255, 255, 0.5);
+   border-radius: 25px;
+   padding-left: 8px;
+   padding-right: 8px;
 }
 
 /* Your Playlists
